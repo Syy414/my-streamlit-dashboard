@@ -71,6 +71,10 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+def split_interest_tags(text):
+    """Split the comma-separated interest_tags column into clean tag tokens."""
+    return [tag.strip() for tag in str(text).split(",") if tag.strip()]
+
 # ── Load artifacts ─────────────────────────────────────────────────────────
 @st.cache_resource
 def load_artifacts():
